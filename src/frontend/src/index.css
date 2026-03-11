@@ -1,0 +1,290 @@
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/PlayfairDisplay.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/assets/fonts/InstrumentSerif.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Crimson Pro";
+  src: url("/assets/fonts/CrimsonPro.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.97 0.01 10;
+    --foreground: 0.25 0.06 15;
+    --card: 0.98 0.008 10;
+    --card-foreground: 0.25 0.06 15;
+    --popover: 0.98 0.008 10;
+    --popover-foreground: 0.25 0.06 15;
+    --primary: 0.52 0.18 15;
+    --primary-foreground: 0.98 0.005 10;
+    --secondary: 0.92 0.04 15;
+    --secondary-foreground: 0.35 0.08 15;
+    --muted: 0.94 0.02 10;
+    --muted-foreground: 0.55 0.06 15;
+    --accent: 0.88 0.07 355;
+    --accent-foreground: 0.3 0.1 15;
+    --destructive: 0.55 0.2 25;
+    --destructive-foreground: 0.98 0.005 10;
+    --border: 0.88 0.03 10;
+    --input: 0.88 0.03 10;
+    --ring: 0.52 0.18 15;
+    --radius: 0.75rem;
+    --chart-1: 0.65 0.18 355;
+    --chart-2: 0.72 0.12 340;
+    --chart-3: 0.78 0.09 320;
+    --chart-4: 0.82 0.06 300;
+    --chart-5: 0.88 0.04 280;
+    --sidebar: 0.95 0.02 10;
+    --sidebar-foreground: 0.25 0.06 15;
+    --sidebar-primary: 0.52 0.18 15;
+    --sidebar-primary-foreground: 0.98 0.005 10;
+    --sidebar-accent: 0.9 0.05 355;
+    --sidebar-accent-foreground: 0.3 0.1 15;
+    --sidebar-border: 0.88 0.03 10;
+    --sidebar-ring: 0.52 0.18 15;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Playfair Display", serif;
+  }
+}
+
+/* ===================== ROMANTIC ANIMATIONS ===================== */
+
+@keyframes floatFlower {
+  0% {
+    transform: translateY(100vh) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120px) rotate(360deg) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    text-shadow: 0 0 20px #e91e6388, 0 0 40px #c2185b66, 0 0 60px #ad145544;
+  }
+  50% {
+    text-shadow: 0 0 30px #e91e63cc, 0 0 60px #c2185b99, 0 0 90px #ad145566, 0 0
+      120px #e91e6333;
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.15);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-8px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes petalFall {
+  0% {
+    transform: translateY(-60px) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(30px);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg) translateX(-20px);
+    opacity: 0;
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    text-shadow: 0 0 15px #e91e6399, 0 0 30px #c2185b66;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 30px #e91e63cc, 0 0 60px #c2185baa, 0 0 90px #e91e6355;
+    opacity: 0.92;
+  }
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes borderGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px #e91e6333, 0 0 20px #c2185b22;
+  }
+  50% {
+    box-shadow: 0 0 20px #e91e6366, 0 0 40px #c2185b44, 0 0 60px #e91e6322;
+  }
+}
+
+/* Screen transition */
+.screen-enter {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.screen-exit {
+  animation: fadeIn 0.3s ease-in reverse forwards;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #c2185b55;
+  border-radius: 3px;
+}
